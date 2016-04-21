@@ -26,12 +26,12 @@
 			"type": "node",
 			"request": "attach",
 			"port": 5858,
-			"address": "localhost",
+			"address": "192.168.99.100",
 			"restart": false,
 			"sourceMaps": false,
 			"outDir": null,
-			"localRoot": "${workspaceRoot}",
-			"remoteRoot": null
+			"localRoot": "${workspaceRoot}/",
+			"remoteRoot": "/app/"
 		}
 	]
 }

@@ -1,13 +1,15 @@
 /// <reference path="../typings/express/express.d.ts" />
 "use strict";
 const express = require("express");
-const PORT = 8080;
+const PORT = 80;
 let app = express();
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    console.log("Got a GET request for the Home page.");
+    res.status(200).send("Hello World!");
 });
-app.get("/api/registrations", (req, res) => {
-    res.send(new Array());
+let server = app.listen(PORT, function () {
+    let host = server.address().address;
+    let port = server.address().port;
+    console.log("listening on http://%s:%s", host, port);
 });
-app.listen(PORT);
 //# sourceMappingURL=server.js.map
