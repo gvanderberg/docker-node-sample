@@ -1,0 +1,17 @@
+{
+  "name": "kloudbox-docker-node-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Gareth van der Berg",
+    "email": "gareth.shaun@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
