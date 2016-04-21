@@ -1,5 +1,5 @@
 {
-  "name": "kloudbox-docker-node-tutorial",
+  "name": "vscode-docker-node-sample",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
