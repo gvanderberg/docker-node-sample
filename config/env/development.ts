@@ -11,7 +11,7 @@ if (fs.existsSync(file)) {
     Object.keys(env).forEach(key => process.env[key] = env[key]);
 }
 
-const db = "mongodb://localhost/noobjs_dev";
+const db = "mongodb://192.168.99.100:27017/dockerDb";
 
 const facebook = {
     clientId: process.env.FACEBOOK_CLIENTID,
