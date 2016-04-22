@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+    div.container
+        form.form-signin
+            h2.form-signin-heading Please sign in
+            input.form-control.input-lg(id="email", placeholder="Email address", type="email")            
+            input.form-control.input-lg(id="password", placeholder="Password", type="password")
+            div.checkbox
+                label
+                    input(type="checkbox", value="remember-me")
+                    | Remember me
+            input.btn.btn-primary.btn-lg.btn-block(type="submit", value="Sign in")

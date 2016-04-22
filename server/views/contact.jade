@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    div.container
+        div.row
+            h2.page-header Contact me
+            div.col-md-4
+                form
+                    div.form-group
+                        label(for="email") Email address
+                        input.form-control(id="email", placeholder="Email address", type="email")
+                    div.form-group
+                        label(for="subject") What's it about?
+                        input.form-control(id="subject", placeholder="Subject", type="text")
+                    div.form-group
+                        label(for="message") Message
+                        textarea.form-control(id="message", placeholder="Message", rows="5")
+                    div.form-group
+                        p.pull-right #[input.btn.btn-primary(type="submit", value="Send")]
+            div.col-md-8

@@ -1,6 +1,6 @@
 {
   "name": "vscode-docker-node-sample",
-  "version": "1.0.0",
+  "version": "1.0.0.*",
   "description": "",
   "main": "server/server.js",
   "scripts": {
@@ -15,7 +15,15 @@
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
+    "fs": "0.0.2",
     "jade": "^1.11.0",
-    "multer": "^1.1.0"
+    "mongoose": "^4.4.13",
+    "multer": "^1.1.0",
+    "notifier": "^0.1.7"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-tsb": "1.10.4"
   }
 }

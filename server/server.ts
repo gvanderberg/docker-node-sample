@@ -6,6 +6,7 @@ import cookieParser = require("cookie-parser");
 import jade = require("jade");
 import path = require("path");
 import routes = require("./routes/index");
+import users = require("./routes/index");
 
 const PORT = 8080;
 
@@ -20,12 +21,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", routes);
+//app.use("/users", users);
 
 if (app.get("env") === "development") {
     app.use(function (req, res, next) {
         res.render('error', {
-            //message: err.message,
-            //error: err
+            message: "",
+            error: {}
         });
     });
 }

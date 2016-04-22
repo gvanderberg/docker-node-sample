@@ -14,9 +14,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/", routes);
+//app.use("/users", users);
 if (app.get("env") === "development") {
     app.use(function (req, res, next) {
-        res.render('error', {});
+        res.render('error', {
+            message: "",
+            error: {}
+        });
     });
 }
 let server = app.listen(PORT, function () {
