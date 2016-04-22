@@ -17,6 +17,7 @@
     "express": "^4.13.4",
     "fs": "0.0.2",
     "jade": "^1.11.0",
+    "method-override": "^2.3.5",
     "mongoose": "^4.4.13",
     "multer": "^1.1.0",
     "notifier": "^0.1.7"

@@ -17,6 +17,8 @@ class UserRoutes {
             res.render("users/signup", { title: "Sign Up" });
         });
         router.get("/users", controller.retrieve);
+        router.post("/users/create", controller.create);
+        router.delete("/users/delete/:_id", controller.delete);
         return router;
     }
 }

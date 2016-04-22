@@ -4,8 +4,29 @@ import IUserModel = require("./../app/models/interfaces/UserModel");
 import UserBusiness = require("./../app/business/UserBusiness");
 
 class UserController implements IBaseController<UserBusiness> {
-    create(req: express.Request, res: express.Response): void { }
-    delete(req: express.Request, res: express.Response): void { }
+    create(req: express.Request, res: express.Response): void {
+        try {
+            var user: IUserModel = <IUserModel>req.body;
+            var business = new UserBusiness();
+
+            business.create(user, (error, result) => {
+                if (error) {
+                    res.render("error", error);
+                }
+                else {
+                    res.render("users/list", { title: "Users", data: result });
+                }
+            });
+        } catch (error) {
+            console.log(error);
+            res.send({ "error": "error in your request" });
+        }
+    }
+    delete(req: express.Request, res: express.Response): void {
+        var id: string = req.params._id;
+        var business = new UserBusiness();
+
+    }
     findById(req: express.Request, res: express.Response): void { }
     retrieve(req: express.Request, res: express.Response): void {
         try {
@@ -15,12 +36,12 @@ class UserController implements IBaseController<UserBusiness> {
                 if (error) {
                     res.send({ "error": "error" });
                 } else {
-                    res.render("users/list", { title: "User List", data: result });
+                    res.render("users/list", { title: "Users", data: result });
                 }
-            }); 
+            });
         }
-        catch (e) {
-            console.log(e);
+        catch (error) {
+            console.log(error);
             res.send({ "error": "error in your request" });
         }
     }

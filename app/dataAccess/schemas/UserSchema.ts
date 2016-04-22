@@ -11,9 +11,9 @@ class UserSchema {
             lastName: { type: String },
             displayName: { type: String },
             email: { type: String, required: true },
-            password: { type: String, required: true },
-            provider: { type: String, required: true },
-            salt: { type: String, required: true }
+            password: { type: String },
+            provider: { type: String },
+            salt: { type: String }
         });
 
         return schema;
