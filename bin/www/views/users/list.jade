@@ -1,9 +1,12 @@
 extends ../layouts/desktop
 
+block page 
+  - var menu = "users"
 block content
     div.container
         div.row
-            h2.page-header= title
+            div.page-header
+                h2= title
             div.col-md-8
                 table.table.table-condensed
                     thead
