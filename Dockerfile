@@ -1,4 +1,5 @@
-FROM node:latest
+FROM node
+MAINTAINER Gareth van der Berg <gareth.shaun@gmail.com>
 
 COPY . /app
 WORKDIR /app

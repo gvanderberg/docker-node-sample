@@ -1,5 +1,4 @@
 import IArticleModel = require("./interfaces/ArticleModel");
-import IUserModel = require("./interfaces/UserModel");
 
 class ArticleModel {
     private _articleModel: IArticleModel;
@@ -8,7 +7,7 @@ class ArticleModel {
         this._articleModel = articleModel;
     }
 
-    get author(): IUserModel {
+    get author(): Object {
         return this._articleModel.author;
     }
 

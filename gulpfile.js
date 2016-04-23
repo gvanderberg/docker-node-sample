@@ -10,16 +10,16 @@ gulp.task("bower", () => {
     return bower();
 });
 
-gulp.task("build", ["build:static", "build:views"], () => {
+gulp.task("build", ["build:public", "build:views"], () => {
     return gulp.src(["src/**/*.ts"]).pipe(compile()).pipe(gulp.dest("bin/www"));
 });
 
-gulp.task("build:static", () => {
+gulp.task("build:public", () => {
     return gulp.src(["src/public/**/*.*"]).pipe(gulp.dest("bin/www/public"));
 });
 
 gulp.task("build:views", () => {
-    return gulp.src(["src/**/*.jade"]).pipe(gulp.dest("bin/www"));
+    return gulp.src(["src/views/**/*.jade"]).pipe(gulp.dest("bin/www/views"));
 });
 
 gulp.task("clean", () => { });

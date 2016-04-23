@@ -17,6 +17,7 @@ html
                     a.navbar-brand(href="/") Super Node.js
                     ul.nav.navbar-nav
                         li: a(href="/") Home
+                        li: a(href="/articles") Blog
                         li: a(href="/about") About
                         li: a(href="/contact") Contact
                     ul.nav.navbar-nav.navbar-right
@@ -24,10 +25,11 @@ html
                             a.dropdown-toggle(href="#", data-toggle="dropdown", role="button", aria-expanded="false") Dropdown
                                 span.caret
                             ul.dropdown-menu(role="menu")
-                                li: a(href="/signin") Sign In
+                                li: a.glyphicon.glyphicon-log-in(href="/signin")  Sign In
+                                li: a.glyphicon.glyphicon-log-out(href="/signout")  Sign Out
                                 li.divider
                                 li.dropdown-header User Admin
-                                li: a(href="/users") Users
+                                li: a.glyphicon.glyphicon-cog(href="/users")  Users
         block content
         
         script(type="text/javascript", src="/libs/jquery.js")

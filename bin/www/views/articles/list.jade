@@ -1,0 +1,15 @@
+extends ../layouts/desktop
+
+block page 
+  - var menu = "index"
+block content
+    div.container
+        div.row
+            if (articles.length === 0)
+                | There's no published content yet. 
+                a(href="/signin") Sign in
+                |  to post and publish.
+            else 
+                each article, index in articles
+                    div
+                        h2 #[a(href="/articles/#{article.slug}")= article.title]

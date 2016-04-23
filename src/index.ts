@@ -8,10 +8,11 @@ const PORT = 8080;
 
 let app = express();
 
-app.use(Middlewares.configuration);
-
+// view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
+
+app.use(Middlewares.configuration);
 app.use(express.static(path.join(__dirname, "public")));
 
 if (app.get("env") === "development") {
@@ -29,3 +30,5 @@ let server = app.listen(PORT, function () {
 
     console.log("listening on http://%s:%s", host, port);
 });
+
+export = app;

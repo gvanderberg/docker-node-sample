@@ -1,4 +1,4 @@
-import IBaseBusiness = require("../../../app/business/interfaces/base/BaseBusiness");
+import IBaseBusiness = require("../../../business/interfaces/base/BaseBusiness");
 import IReadController = require("./../common/ReadController");
 import IWriteController = require("./../common/WriteController");
 

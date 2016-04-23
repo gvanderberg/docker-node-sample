@@ -1,12 +1,11 @@
 import mongoose = require("mongoose");
-import IUserModel = require("./UserModel");
 
 interface IArticleModel extends mongoose.Document {
-    author: IUserModel;
+    author: {};
     title: string;
     body: string;
-    comments: any;
-    tags: any;
+    comments: [any];
+    tags: [any];
     createdAt: Date;
 }
 

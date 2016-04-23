@@ -12,13 +12,13 @@ block content
                             th last name
                             th #[a.btn.btn-success.btn-xs(data-target="#create-user" data-toggle="modal" href="#") create]
                     tbody
-                        each item in data
-                            tr: td= item.email
-                                td= item.firstName
-                                td= item.lastName
+                        each user, index in data
+                            tr: td= user.email
+                                td= user.firstName
+                                td= user.lastName
                                 td: p.btn-group
                                       | #[a.btn.btn-primary.btn-xs.glyphicon.glyphicon-pencil(data-target="#update-user" data-toggle="modal" href="#")]
-                                      | #[a.btn.btn-danger.btn-xs.glyphicon.glyphicon-trash(href="/users/delete/#{item._id}?_method=DELETE")]
+                                      | #[a.btn.btn-danger.btn-xs.glyphicon.glyphicon-trash(href="/users/delete/#{user._id}?_method=DELETE")]
 
     div.modal.fade(id="create-user", role="dialog")
         div.modal-dialog(role="document")

@@ -1,5 +1,5 @@
 import express = require("express");
-import UserController = require("./../../controllers/UserController");
+import UserController = require("./../../app/controllers/UserController");
 
 let router = express.Router();
 
@@ -23,15 +23,21 @@ class UserRoutes {
             res.render("users/signup", { title: "Sign Up" });
         });
 
+        router.get("/signout", (req, res, next) => {
+            console.log("Got a GET request for the Sign Out page.");
+            res.redirect("/");
+        });
+
         router.get("/users", controller.retrieve);
-
-        router.post("/users/create", controller.create);
-
-        router.delete("/users/delete/:_id", controller.delete);
+        router.get("/users/edit/:_id", controller.findById);
+        router.delete("/users/:_id", controller.delete);
+        router.post("/users", controller.create);
+        router.put("/users/:_id", controller.update);
 
         return router;
     }
 }
+
 Object.seal(UserRoutes);
 
 export = UserRoutes;

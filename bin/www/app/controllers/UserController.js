@@ -1,5 +1,5 @@
 "use strict";
-const UserBusiness = require("./../app/business/UserBusiness");
+const UserBusiness = require("./../business/UserBusiness");
 class UserController {
     create(req, res) {
         try {

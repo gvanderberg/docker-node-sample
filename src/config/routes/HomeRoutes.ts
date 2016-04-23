@@ -1,5 +1,4 @@
 import express = require("express");
-import path = require("path");
 
 let router = express.Router();
 

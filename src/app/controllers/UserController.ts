@@ -1,7 +1,7 @@
 import express = require("express");
 import IBaseController = require("./interfaces/base/BaseController");
-import IUserModel = require("./../app/models/interfaces/UserModel");
-import UserBusiness = require("./../app/business/UserBusiness");
+import IUserModel = require("./../models/interfaces/UserModel");
+import UserBusiness = require("./../business/UserBusiness");
 
 class UserController implements IBaseController<UserBusiness> {
     create(req: express.Request, res: express.Response): void {

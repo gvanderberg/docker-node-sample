@@ -2,10 +2,11 @@ extends ../layouts/desktop
 
 block content
     div.container
-        form.form-signin
+        div= error
+        form.form-signin(action="/signin", method="POST", role="form")
             h2.form-signin-heading Please sign in
-            input.form-control.input-lg(id="email", placeholder="Email address", type="email")            
-            input.form-control.input-lg(id="password", placeholder="Password", type="password")
+            input#email.form-control.input-lg(name="email", placeholder="Email address", type="email")            
+            input#password.form-control.input-lg(name="password", placeholder="********", type="password")
             div.checkbox
                 label
                     input(type="checkbox", value="remember-me")
