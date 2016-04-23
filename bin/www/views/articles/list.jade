@@ -19,6 +19,6 @@ block content
                         div.timeline-panel
                             div.timeline-heading
                                 h4.timeline-title #[a(href="/articles/view/#{article._id}")= article.title]
-                                p: small.text-muted: i.glyphicon.glyphicon-time  #{article.createdAt}
+                                p: small.text-muted: i.glyphicon.glyphicon-time  #{article.createdAt.toDateString()}
                             div.timeline-body
                                 p #{article.body}
