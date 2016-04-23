@@ -1,5 +1,11 @@
 extends ./layouts/desktop
 
+block page 
+  - var menu = "contact"
 block content
-    h1= message
-    pre #{error}
+    div.container
+        div.row
+            div.col-sm-12
+                div.page-header
+                    h1= message
+                pre #{error}
