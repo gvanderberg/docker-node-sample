@@ -13,7 +13,7 @@ block content
             |  to post and publish.
         else 
             ul.timeline
-                each article, index in articles
+                each article, index in articles.reverse()
                     li(class=(index % 2)?"timeline-inverted":"")
                         div.timeline-badge
                         div.timeline-panel
