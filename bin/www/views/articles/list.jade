@@ -5,7 +5,7 @@ block page
 block content
     div.container
         div.page-header
-            h1= title
+            h1 #{title} <small>aka</small> Developer
             | #[a.btn.btn-primary.pull-right(href="/articles/post") create]
         if (articles.length === 0)
             | There's no published content yet. 

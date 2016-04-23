@@ -6,11 +6,11 @@ block content
     div.container
         div.row
             h2.page-header About me
-            div.col-md-4.col-sm-6.col-xs-12
+            div.col-md-8.col-sm-6.col-xs-12
                 div.list-group
                     a.list-group-item(href="#")
                         h4.list-group-item-heading NodeJS with TypeScript and Mongoose (CRUD)
                         p.list-group-item-text #[a.list-group-item(href="https://gallery.technet.microsoft.com/Application-Example-NodeJS-d632ee2d", target="_blank") gallery]
             div.col-md-4.col-sm-6.col-xs-12
-                div #{settings.env}
+                div #{JSON.stringify(settings)}
                         
