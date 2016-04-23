@@ -15,7 +15,7 @@ block content
             ul.timeline
                 each article, index in articles.reverse()
                     li(class=(index % 2)?"timeline-inverted":"")
-                        div.timeline-badge
+                        div.timeline-badge(class=(index % 2)?"success":"primary")
                         div.timeline-panel
                             div.timeline-heading
                                 h4.timeline-title #[a(href="/articles/view/#{article._id}")= article.title]
