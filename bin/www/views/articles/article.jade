@@ -1,10 +1,11 @@
 extends ../layouts/desktop
 
+block page 
+  - var menu = "article"
 block content
-  div.container
-    div.row
-      div.col-sm-8.col-xs-12
-        h2= title
-        p.lead #{article.createdAt.toDateString()}
-        hr
-        p #{article.body}
+    div.container
+        div.row
+            div.page-header
+                h2 #{title} <small>#{article.createdAt.toDateString()}</small>
+            div.col-sm-8.col-xs-12
+              p #{article.body}
