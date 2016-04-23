@@ -11,6 +11,10 @@ class ArticleModel {
         return this._articleModel.author;
     }
 
+    get slug(): string {
+        return this._articleModel.slug;
+    }
+
     get title(): string {
         return this._articleModel.title;
     }

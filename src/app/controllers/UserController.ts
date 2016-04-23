@@ -12,9 +12,8 @@ class UserController implements IBaseController<UserBusiness> {
             business.create(user, (error, result) => {
                 if (error) {
                     res.render("error", error);
-                }
-                else {
-                    res.render("users/list", { title: "Users", data: result });
+                } else {
+                    res.redirect("/users");
                 }
             });
         } catch (error) {

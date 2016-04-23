@@ -10,7 +10,7 @@ class UserController {
                     res.render("error", error);
                 }
                 else {
-                    res.render("users/list", { title: "Users", data: result });
+                    res.redirect("/users");
                 }
             });
         }

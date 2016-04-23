@@ -14,10 +14,15 @@ class ArticleRoutes {
         var controller = this._articleController;
 
         router.get("/articles", controller.retrieve);
-        router.get("/articles/edit/:_id", controller.findById);
-        router.delete("/articles/:_id", controller.delete);
-        router.post("/articles", controller.create);
-        router.put("/articles/:_id", controller.update);
+        //router.delete("/articles/:_id", controller.delete);
+        //router.put("/articles/:_id", controller.update);
+
+        router.get("/articles/view/:_id", controller.findById);
+
+        router.get("/articles/post", (req, res) => {
+            res.render("articles/post");
+        });
+        router.post("/articles/post", controller.create);
 
         return router;
     }

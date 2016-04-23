@@ -11,6 +11,8 @@ class ArticleBusiness implements ArticleBusiness {
     }
 
     create(item: IArticleModel, callback: (error: any, result: any) => void) {
+        item.createdAt = new Date();
+        
         this._articleRepository.create(item, callback);
     }
 

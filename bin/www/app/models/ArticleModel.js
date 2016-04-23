@@ -6,6 +6,9 @@ class ArticleModel {
     get author() {
         return this._articleModel.author;
     }
+    get slug() {
+        return this._articleModel.slug;
+    }
     get title() {
         return this._articleModel.title;
     }

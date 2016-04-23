@@ -5,6 +5,7 @@ class ArticleBusiness {
         this._articleRepository = new ArticleRepository();
     }
     create(item, callback) {
+        item.createdAt = new Date();
         this._articleRepository.create(item, callback);
     }
     delete(_id, callback) {

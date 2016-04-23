@@ -1,5 +1,7 @@
 extends ./layouts/desktop
 
+block page 
+  - var menu = "about"
 block content
     div.container
         div.row
@@ -9,4 +11,6 @@ block content
                     a.list-group-item(href="#")
                         h4.list-group-item-heading NodeJS with TypeScript and Mongoose (CRUD)
                         p.list-group-item-text #[a.list-group-item(href="https://gallery.technet.microsoft.com/Application-Example-NodeJS-d632ee2d", target="_blank") gallery]
+            div.col-md-4.col-sm-6.col-xs-12
+                div #{settings.env}
                         

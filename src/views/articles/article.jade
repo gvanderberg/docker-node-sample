@@ -1,6 +1,8 @@
 extends ../layouts/desktop
 
 block content
-  p
-    h1= title
-    p= text
+  div.container
+    div.row
+      div.col-sm-8.col-xs-12
+        h2= title
+        p.lead #{article.createdAt}

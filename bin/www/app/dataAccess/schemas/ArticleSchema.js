@@ -6,6 +6,7 @@ class ArticleSchema {
     static get schema() {
         let schema = mongoose.Schema({
             author: { type: {} },
+            slug: { type: String, required: true },
             title: { type: String, required: true },
             body: { type: String, required: true },
             comments: { type: [] },

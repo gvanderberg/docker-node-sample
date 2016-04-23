@@ -17,8 +17,8 @@ block content
                                 td= user.firstName
                                 td= user.lastName
                                 td: p.btn-group
-                                      | #[a.btn.btn-primary.btn-xs.glyphicon.glyphicon-pencil(data-target="#update-user" data-toggle="modal" href="#")]
-                                      | #[a.btn.btn-danger.btn-xs.glyphicon.glyphicon-trash(href="/users/delete/#{user._id}?_method=DELETE")]
+                                      | #[a.btn.btn-warning.btn-xs(data-target="#update-user" data-toggle="modal" href="#") edit]
+                                      | #[a.btn.btn-danger.btn-xs(href="/users/delete/#{user._id}?_method=DELETE") delete]
 
     div.modal.fade(id="create-user", role="dialog")
         div.modal-dialog(role="document")
