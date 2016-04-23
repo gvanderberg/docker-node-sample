@@ -1,6 +1,6 @@
 {
     "name": "vscode-docker-node-sample",
-    "version": "1.0.0.*",
+    "version": "1.0.0",
     "description": "",
     "dependencies": {
         "bootstrap": "3.3.6"

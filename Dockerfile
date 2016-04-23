@@ -8,4 +8,4 @@ EXPOSE 5858
 
 RUN npm install
 
-CMD ["node", "--debug=5858", "server/server.js"]
+CMD ["node", "--debug=5858", "bin/www/index.js"]

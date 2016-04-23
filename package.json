@@ -1,8 +1,8 @@
 {
   "name": "vscode-docker-node-sample",
-  "version": "1.0.0.*",
+  "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "bin/www/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
