@@ -33,6 +33,13 @@ body {
     margin-bottom: 10px;
 }
 
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .timeline {
     list-style: none;
     padding: 20px 0 20px;
