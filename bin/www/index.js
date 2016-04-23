@@ -5,10 +5,10 @@ const path = require("path");
 const Middlewares = require("./config/middlewares/base/BaseMiddlewares");
 const PORT = 8080;
 let app = express();
+app.use(Middlewares.configuration);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 app.use(express.static(path.join(__dirname, "public")));
-app.use(Middlewares.configuration);
 if (app.get("env") === "development") {
     app.use(function (req, res, next) {
         res.render("error", {

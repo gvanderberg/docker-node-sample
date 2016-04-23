@@ -25,6 +25,7 @@
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-bower": "0.0.13",
-    "gulp-tsb": "1.10.4"
+    "gulp-tsb": "1.10.4",
+    "typescript": "^1.8.10"
   }
 }

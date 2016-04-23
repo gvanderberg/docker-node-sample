@@ -1,7 +1,6 @@
 import express = require("express");
 import bodyParser = require("body-parser");
 import cookieParser = require("cookie-parser");
-import path = require("path");
 import BaseRoutes = require("./../../routes/base/BaseRoutes");
 import MethodOverride = require("./../MethodOverride");
 
