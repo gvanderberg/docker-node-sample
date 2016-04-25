@@ -1,0 +1,12 @@
+mongo:
+  image: mongo
+redis:
+  image: redis
+web:
+  image: titansoftware/node-sample
+  links:
+    - mongo
+    - redis
+  ports:
+    - "8080:8080"
+    - "5858:5858"
