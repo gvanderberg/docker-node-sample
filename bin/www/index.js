@@ -12,8 +12,9 @@ app.use(Middlewares.configuration);
 app.use(express.static(path.join(__dirname, "public")));
 if (app.get("env") === "development") {
     app.use(function (req, res, next) {
+        //res.status(err.status || 500);
         res.render("error", {
-            message: "",
+            message: "Error",
             error: {}
         });
     });

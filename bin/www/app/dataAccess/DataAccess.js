@@ -12,7 +12,8 @@ class DataAccess {
         this.mongooseConnection.once("open", () => {
             console.log("Connected to mongodb.");
         });
-        this.mongooseInstance = Mongoose.connect("mongodb://mongo:27017/dockerDb");
+        this.mongooseInstance = Mongoose.connect("mongodb://192.168.99.100:27017/dockerDb");
+        //this.mongooseInstance = Mongoose.connect("mongodb://mongo:27017/dockerDb");
         return this.mongooseInstance;
     }
 }

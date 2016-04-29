@@ -8,18 +8,18 @@ block content
             div.page-header
                 h2 #{title} <small>aka</small> Developer
                 | #[a.btn.btn-primary.pull-right(href="/articles/post") create]
-            if (articles.length === 0)
+            if (data.length === 0)
                 | There's no published content yet. 
                 a(href="/signin") Sign in
                 |  to post and publish.
             else 
                 ul.timeline
-                    each article, index in articles.reverse()
+                    each article, index in data.reverse()
                         li(class=(index % 2)?"timeline-inverted":"")
                             div.timeline-badge(class=(index % 2)?"success":"primary")
                             div.timeline-panel
                                 div.timeline-heading
-                                    h4.timeline-title #[a(href="/articles/view/#{article._id}")= article.title]
+                                    h4.timeline-title #[a(href="/articles/#{article._id}")= article.title]
                                     p: small.text-muted: i.glyphicon.glyphicon-time  #{article.createdAt.toDateString()}
                                 div.timeline-body
                                     p #{article.body}

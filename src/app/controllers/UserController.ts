@@ -11,40 +11,87 @@ class UserController implements IBaseController<UserBusiness> {
 
             business.create(user, (error, result) => {
                 if (error) {
-                    res.render("error", error);
+                    res.send({ "error": error });
                 } else {
-                    res.redirect("/users");
+                    res.send({ "success": "success" });
                 }
             });
-        } catch (error) {
-            console.log(error);
+        } catch (e) {
+            console.log(e);
             res.send({ "error": "error in your request" });
         }
     }
     delete(req: express.Request, res: express.Response): void {
-        var id: string = req.params._id;
-        var business = new UserBusiness();
+        try {
+            var id: string = req.params._id;
+            var business = new UserBusiness();
 
+            business.delete(id, (error, result) => {
+                if (error) {
+                    res.send({ "error": error });
+                } else {
+                    res.send({ "success": "success" });
+                }
+            });
+        } catch (e) {
+            console.log(e);
+            res.send({ "error": "error in your request" });
+        }
     }
-    findById(req: express.Request, res: express.Response): void { }
+    findById(req: express.Request, res: express.Response): void {
+        try {
+            var id: string = req.params._id;
+            var business = new UserBusiness();
+
+            business.findById(id, (error, result) => {
+                if (error) {
+                    res.send({ "error": error });
+                } else {
+                    res.send(result);
+                    //res.send({ "success": "success" });
+                }
+            });
+        } catch (e) {
+            console.log(e);
+            res.send({ "error": "error in your request" });
+        }
+    }
     retrieve(req: express.Request, res: express.Response): void {
         try {
             var business = new UserBusiness();
 
             business.retrieve((error, result) => {
                 if (error) {
-                    res.send({ "error": "error" });
+                    res.send({ "error": error });
                 } else {
+                    //res.send(result);
                     res.render("users/list", { title: "Users", data: result });
                 }
             });
         }
-        catch (error) {
-            console.log(error);
+        catch (e) {
+            console.log(e);
             res.send({ "error": "error in your request" });
         }
     }
-    update(req: express.Request, res: express.Response): void { }
+    update(req: express.Request, res: express.Response): void {
+        try {
+            var _id: string = req.params._id;
+            var user: IUserModel = <IUserModel>req.body;
+            var business = new UserBusiness();
+
+            business.update(_id, user, (error, result) => {
+                if (error) {
+                    res.send({ "error": error });
+                } else {
+                    res.send({ "success": "success" });
+                }
+            });
+        } catch (e) {
+            console.log(e);
+            res.send({ "error": "error in your request" });
+        }
+    }
 }
 
 export = UserController;

@@ -20,9 +20,9 @@ class UserRoutes {
             console.log("Got a GET request for the Sign Out page.");
             res.redirect("/");
         });
-        router.get("/users", controller.retrieve);
-        router.get("/users/edit/:_id", controller.findById);
         router.delete("/users/:_id", controller.delete);
+        router.get("/users", controller.retrieve);
+        router.get("/users/:_id", controller.findById);
         router.post("/users", controller.create);
         router.put("/users/:_id", controller.update);
         return router;

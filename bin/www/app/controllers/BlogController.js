@@ -10,7 +10,7 @@ class BlogController {
                     res.render("error", error);
                 }
                 else {
-                    res.redirect("/articles");
+                    res.send({ "success": "success" });
                 }
             });
         }
@@ -19,7 +19,24 @@ class BlogController {
             res.send({ "error": "error in your request" });
         }
     }
-    delete(req, res) { }
+    delete(req, res) {
+        try {
+            var id = req.params._id;
+            var business = new BlogBusiness();
+            business.delete(id, (error, result) => {
+                if (error) {
+                    res.send({ "error": error });
+                }
+                else {
+                    res.send({ "success": "success" });
+                }
+            });
+        }
+        catch (e) {
+            console.log(e);
+            res.send({ "error": "error in your request" });
+        }
+    }
     findById(req, res) {
         try {
             var _id = req.params._id;
@@ -29,7 +46,7 @@ class BlogController {
                     res.send({ "error": "error" });
                 }
                 else {
-                    res.render("articles/view", { title: result.title, article: result });
+                    res.send(result);
                 }
             });
         }
@@ -46,7 +63,8 @@ class BlogController {
                     res.send({ "error": error });
                 }
                 else {
-                    res.render("articles/list", { title: "Ninja", articles: result });
+                    //res.send(result);
+                    res.render("articles/list", { title: "Ninja", data: result });
                 }
             });
         }
@@ -55,6 +73,24 @@ class BlogController {
             res.send({ "error": "error in your request" });
         }
     }
-    update(req, res) { }
+    update(req, res) {
+        try {
+            var _id = req.params._id;
+            var user = req.body;
+            var business = new BlogBusiness();
+            business.update(_id, user, (error, result) => {
+                if (error) {
+                    res.send({ "error": error });
+                }
+                else {
+                    res.send({ "success": "success" });
+                }
+            });
+        }
+        catch (e) {
+            console.log(e);
+            res.send({ "error": "error in your request" });
+        }
+    }
 }
 module.exports = BlogController;

@@ -13,7 +13,7 @@ class BlogController implements IBaseController<BlogBusiness> {
                 if (error) {
                     res.render("error", error);
                 } else {
-                    res.redirect("/articles");
+                    res.send({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -21,7 +21,23 @@ class BlogController implements IBaseController<BlogBusiness> {
             res.send({ "error": "error in your request" });
         }
     }
-    delete(req: express.Request, res: express.Response): void { }
+    delete(req: express.Request, res: express.Response): void {
+        try {
+            var id: string = req.params._id;
+            var business = new BlogBusiness();
+
+            business.delete(id, (error, result) => {
+                if (error) {
+                    res.send({ "error": error });
+                } else {
+                    res.send({ "success": "success" });
+                }
+            });
+        } catch (e) {
+            console.log(e);
+            res.send({ "error": "error in your request" });
+        }
+    }
     findById(req: express.Request, res: express.Response): void {
         try {
             var _id: string = req.params._id;
@@ -31,7 +47,8 @@ class BlogController implements IBaseController<BlogBusiness> {
                 if (error) {
                     res.send({ "error": "error" });
                 } else {
-                    res.render("articles/view", { title: result.title, article: result });
+                    res.send(result);
+                    //res.render("articles/view", { title: result.title, article: result });
                 }
             });
         } catch (e) {
@@ -47,7 +64,8 @@ class BlogController implements IBaseController<BlogBusiness> {
                 if (error) {
                     res.send({ "error": error });
                 } else {
-                    res.render("articles/list", { title: "Ninja", articles: result });
+                    //res.send(result);
+                    res.render("articles/list", { title: "Ninja", data: result });
                 }
             });
         }
@@ -56,7 +74,24 @@ class BlogController implements IBaseController<BlogBusiness> {
             res.send({ "error": "error in your request" });
         }
     }
-    update(req: express.Request, res: express.Response): void { }
+    update(req: express.Request, res: express.Response): void {
+        try {
+            var _id: string = req.params._id;
+            var user: IBlogModel = <IBlogModel>req.body;
+            var business = new BlogBusiness();
+
+            business.update(_id, user, (error, result) => {
+                if (error) {
+                    res.send({ "error": error });
+                } else {
+                    res.send({ "success": "success" });
+                }
+            });
+        } catch (e) {
+            console.log(e);
+            res.send({ "error": "error in your request" });
+        }
+    }
 }
 
 export = BlogController;
