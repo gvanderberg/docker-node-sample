@@ -15,14 +15,17 @@
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.4",
+    "flux": "^2.1.1",
     "fs": "0.0.2",
     "jade": "^1.11.0",
     "method-override": "^2.3.5",
     "mongoose": "^4.4.13",
     "multer": "^1.1.0",
-    "notifier": "^0.1.7"
+    "notifier": "^0.1.7",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "del": "^2.2.0",
     "gulp": "3.9.1",
     "gulp-bower": "0.0.13",
     "gulp-tsb": "1.10.4",

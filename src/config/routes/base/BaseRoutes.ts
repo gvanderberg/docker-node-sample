@@ -1,6 +1,6 @@
 import express = require("express");
 import path = require("path");
-import ArticleRoutes = require("./../ArticleRoutes");
+import BlogRoutes = require("./../BlogRoutes");
 import HomeRoutes = require("./../HomeRoutes");
 import UserRoutes = require("./../UserRoutes");
 
@@ -10,7 +10,7 @@ class BaseRoutes {
     get routes() {
         app.set("views", path.join(__dirname, "./../../../views"));
 
-        app.use("/", new ArticleRoutes().routes);
+        app.use("/", new BlogRoutes().routes);
         app.use("/", new HomeRoutes().routes);
         app.use("/", new UserRoutes().routes);
 

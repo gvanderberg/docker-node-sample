@@ -1,6 +1,7 @@
 /// <reference path="./../typings/main.d.ts" />
 
 import express = require("express");
+import favicon = require("serve-favicon");
 import path = require("path");
 import Middlewares = require("./config/middlewares/base/BaseMiddlewares");
 

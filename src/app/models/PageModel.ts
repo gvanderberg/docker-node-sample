@@ -1,25 +1,25 @@
 import IPageModel = require("./interfaces/PageModel");
 
-class ArticleModel {
-    private _articleModel: IPageModel;
+class PageModel {
+    private _pageModel: IPageModel;
 
-    constructor(articleModel: IPageModel) {
-        this._articleModel = articleModel;
+    constructor(pageModel: IPageModel) {
+        this._pageModel = pageModel;
     }
 
     get title(): string {
-        return this._articleModel.title;
+        return this._pageModel.title;
     }
 
     get body(): string {
-        return this._articleModel.body;
+        return this._pageModel.body;
     }
 
     get createdAt(): Date {
-        return this._articleModel.createdAt;
+        return this._pageModel.createdAt;
     }
 }
 
-Object.seal(ArticleModel);
+Object.seal(PageModel);
 
-export = ArticleModel;
+export = PageModel;

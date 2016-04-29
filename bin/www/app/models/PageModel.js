@@ -1,17 +1,17 @@
 "use strict";
-class ArticleModel {
-    constructor(articleModel) {
-        this._articleModel = articleModel;
+class PageModel {
+    constructor(pageModel) {
+        this._pageModel = pageModel;
     }
     get title() {
-        return this._articleModel.title;
+        return this._pageModel.title;
     }
     get body() {
-        return this._articleModel.body;
+        return this._pageModel.body;
     }
     get createdAt() {
-        return this._articleModel.createdAt;
+        return this._pageModel.createdAt;
     }
 }
-Object.seal(ArticleModel);
-module.exports = ArticleModel;
+Object.seal(PageModel);
+module.exports = PageModel;

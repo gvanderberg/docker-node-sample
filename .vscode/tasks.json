@@ -11,6 +11,15 @@
 			"problemMatcher": [
 				"$tsc"
 			]
+		},
+		{
+			"taskName": "clean",
+			"args": [],
+			"isBuildCommand": false,
+			"showOutput": "silent",
+			"problemMatcher": [
+				"$tsc"
+			]
 		}
 	]
 }
