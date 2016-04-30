@@ -11,7 +11,8 @@ class BlogSchema {
             body: { type: String, required: true },
             comments: { type: [] },
             tags: { type: [] },
-            createdAt: { type: Date, required: true }
+            createdAt: { type: Date, required: true },
+            published: { type: Boolean, default: false }
         });
         return schema;
     }

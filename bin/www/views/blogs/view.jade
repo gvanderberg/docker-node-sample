@@ -1,11 +1,11 @@
 extends ../layouts/desktop
 
 block page 
-  - var menu = "blog"
+    - var menu = "blog"
 block content
-    div.container
-        div.row
-            div.page-header
-                h2 #{title} <small>#{article.createdAt.toDateString()}</small>
-            div.col-sm-8.col-xs-12
-              p #{article.body}
+    .container
+        .row
+            .page-header
+                h2 #{title} <small>#{blog.createdAt.toDateString()}</small>
+            .col-sm-8.col-xs-12
+              p #{blog.body}

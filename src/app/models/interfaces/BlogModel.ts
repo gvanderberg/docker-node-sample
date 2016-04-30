@@ -8,6 +8,7 @@ interface IBlogModel extends mongoose.Document {
     comments: [any];
     tags: [any];
     createdAt: Date;
+    published: boolean;
 }
 
 export = IBlogModel;

@@ -34,6 +34,10 @@ class BlogModel {
     get createdAt(): Date {
         return this._blogModel.createdAt;
     }
+
+    get published(): boolean {
+        return this._blogModel.published;
+    }
 }
 
 Object.seal(BlogModel);

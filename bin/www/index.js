@@ -12,7 +12,7 @@ app.use(Middlewares.configuration);
 app.use(express.static(path.join(__dirname, "public")));
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-    var err = new Error("Not Found");
+    let err = new Error("Not Found");
     err["status"] = 404;
     next(err);
 });

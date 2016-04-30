@@ -1,25 +1,25 @@
 extends ../layouts/desktop
 
 block page 
-  - var menu = "blogs"
+    - var menu = "blogs"
 block content
-    div.container
-        div.row
-            div.page-header
+    .container
+        .row
+            .page-header
                 h2 #{title} <small>aka</small> Developer
                 | #[a.btn.btn-primary.pull-right(href="/blogs/create") create]
-            if (result.length === 0)
+            if (blogs.length === 0)
                 | There's no published content yet. 
                 a(href="/signin") Sign in
                 |  to post and publish.
             else 
                 ul.timeline
-                    each article, index in result.reverse()
+                    each article, index in blogs.reverse()
                         li(class=(index % 2)?"timeline-inverted":"")
-                            div.timeline-badge(class=(index % 2)?"success":"primary")
-                            div.timeline-panel
-                                div.timeline-heading
-                                    h4.timeline-title #[a(href="/blogs/#{article._id}")= article.title]
+                            .timeline-badge(class=(index % 2)?"success":"primary")
+                            .timeline-panel
+                                .timeline-heading
+                                    h4.timeline-title #[a(href="/blogs/view/#{article._id}")= article.title]
                                     p: small.text-muted: i.glyphicon.glyphicon-time  #{article.createdAt.toDateString()}
-                                div.timeline-body
+                                .timeline-body
                                     p #{article.body}

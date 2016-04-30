@@ -24,6 +24,9 @@ class BlogModel {
     get createdAt() {
         return this._blogModel.createdAt;
     }
+    get published() {
+        return this._blogModel.published;
+    }
 }
 Object.seal(BlogModel);
 module.exports = BlogModel;

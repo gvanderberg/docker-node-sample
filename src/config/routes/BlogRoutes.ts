@@ -16,20 +16,23 @@ class BlogRoutes {
         router.get("/", (req, res) => {
             console.log("Got a GET request for the Blogs page.");
             repository.retrieve((error, result) => {
-                res.render("blogs/list", { "title": "Ninja Blog", "result": result });
+                res.render("blogs/list", { "title": "Ninja Blog", "blogs": result });
             });
         });
 
         router.get("/create", (req, res) => {
-            console.log("Got a GET request for the Create page.");
+            console.log("Got a GET request for the Blog Create page.");
             res.render("blogs/create", { "title": "Ninja Blog" });
         });
 
-        //router.delete("/:_id", controller.delete);
-        //router.get("/", controller.retrieve);
-        //router.get("/:_id", controller.findById);
-        //router.post("/", controller.create);
-        //router.put("/:_id", controller.update);
+        router.get("/view/:_id", (req, res) => {
+            let id = req.params._id;
+
+            console.log("Got a GET request for the Blog View page.");
+            repository.findById(id, (error, result) => {
+                res.render("blogs/view", { "title": result.title, "blog": result });
+            });
+        });
 
         return router;
     }

@@ -1,24 +1,25 @@
 extends ../layouts/desktop
 
 block page
-  - var menu = "post"
+    - var menu = "blogs"
 block content
-  div.container
-    div= error
-    div.row
-      h2.page-header Post an Article
-      div= error
-      div.col-md-8
-        form(action="/api/v1/blogs", method="POST", role="form")
-          div.form-group
-            label(for="title") Title
-            input#title.form-control(name="title", type="text", placeholder="JavaScript is good")
-          div.form-group
-            label(for="slug") Slug
-            input#slug.form-control(name="slug", type="text", placeholder="js-good")
-            span.help-block This string will be used in the URL.
-          div.form-group
-            label(for="body") Text
-            textarea#body.form-control(rows="5", name="body", placeholder="Text")
-          p
-            button.btn.btn-primary(type="submit") Save
+    .container
+        div= error
+        .row
+            .page-header
+                h2= title
+            .col-md-8
+                form(action="/api/v1/blogs", method="POST", role="form")
+                    .form-group
+                        label(for="title") Title
+                        input#title.form-control(name="title", type="text", placeholder="JavaScript is good")
+                    .form-group
+                        label(for="slug") Slug
+                        input#slug.form-control(name="slug", type="text", placeholder="js-good")
+                        span.help-block This string will be used in the URL.
+                    .form-group
+                        label(for="body") Text
+                        textarea#body.form-control(rows="5", name="body", placeholder="Text")
+                    p.pull-right 
+                        input.btn.btn-default(type="button", value="Cancel")
+                        input.btn.btn-primary(type="submit", value="Save")
