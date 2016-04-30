@@ -2,6 +2,8 @@ extends ../layouts/desktop
 
 block page 
     - var menu = "users"
+block alert
+
 block content
     .container
         .row
@@ -15,7 +17,7 @@ block content
                             th last name
                             th #[a.btn.btn-success.btn-xs(data-target="#create-user" data-toggle="modal" href="#") create]
                     tbody
-                        each user, index in data
+                        each user, index in users
                             tr: td= user.email
                                 td= user.firstName
                                 td= user.lastName
