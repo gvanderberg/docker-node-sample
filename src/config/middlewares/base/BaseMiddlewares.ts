@@ -1,6 +1,7 @@
 import express = require("express");
 import bodyParser = require("body-parser");
 import cookieParser = require("cookie-parser");
+import favicon = require("serve-favicon");
 import logger = require("morgan");
 import BaseRoutes = require("./../../routes/base/BaseRoutes");
 import MethodOverride = require("./../MethodOverride");

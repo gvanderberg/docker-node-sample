@@ -19,10 +19,10 @@ block content
                             tr: td= user.email
                                 td= user.firstName
                                 td= user.lastName
-                                td: p.btn-group
-                                      | #[a.btn.btn-warning.btn-xs(data-target="#update-user" data-toggle="modal" href="#") edit]
-                                      form(method="POST", action="/users/#{user._id}?_method=DELETE")
-                                        button.btn.btn-danger.btn-xs(type="submit") delete
+                                td: form(method="POST", action="/users/#{user._id}?_method=DELETE")
+                                        p.btn-group
+                                            | #[a.btn.btn-warning.btn-xs(data-target="#update-user" data-toggle="modal" href="#") edit]
+                                            | #[button.btn.btn-danger.btn-xs(type="submit") delete]
 
     div.modal.fade(id="create-user", role="dialog")
         div.modal-dialog(role="document")

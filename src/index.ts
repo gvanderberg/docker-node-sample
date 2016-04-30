@@ -1,7 +1,6 @@
 /// <reference path="./../typings/main.d.ts" />
 
 import express = require("express");
-import favicon = require("serve-favicon");
 import path = require("path");
 import Middlewares = require("./config/middlewares/base/BaseMiddlewares");
 
@@ -16,15 +15,26 @@ app.set("view engine", "jade");
 app.use(Middlewares.configuration);
 app.use(express.static(path.join(__dirname, "public")));
 
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+    var err = new Error("Not Found");
+    err["status"] = 404;
+    next(err);
+});
+
+// development error handler will print stacktrace
 if (app.get("env") === "development") {
-    app.use(function (req, res, next) {
-        //res.status(err.status || 500);
-        res.render("error", {
-            message: "Error",
-            error: {}
-        });
+    app.use((err: any, req, res, next) => {
+        res.status(err["status"] || 500);
+        res.render("error", { message: err.message, error: err });
     });
 }
+
+// production error handler no stacktraces leaked to user
+app.use((err: any, req, res, next) => {
+    res.status(err["status"] || 500);
+    res.render("error", { message: err.message, error: {} });
+});
 
 let server = app.listen(PORT, function () {
     let host = server.address().address;
