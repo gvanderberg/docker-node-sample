@@ -11,9 +11,9 @@ class BlogController implements IBaseController<BlogBusiness> {
 
             business.create(model, (error, result) => {
                 if (error) {
-                    res.render("error", error);
+                    res.send(error);
                 } else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -28,9 +28,9 @@ class BlogController implements IBaseController<BlogBusiness> {
 
             business.delete(id, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -45,9 +45,9 @@ class BlogController implements IBaseController<BlogBusiness> {
 
             business.findById(_id, (error, result) => {
                 if (error) {
-                    res.send({ "error": "error" });
+                    res.send(error);
                 } else {
-                    res.send(result);
+                    res.json(result);
                     //res.render("articles/view", { title: result.title, article: result });
                 }
             });
@@ -62,10 +62,10 @@ class BlogController implements IBaseController<BlogBusiness> {
 
             business.retrieve((error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    //res.send(result);
-                    res.render("articles/list", { title: "Ninja", data: result });
+                    res.json(result);
+                    //res.render("articles/list", { title: "Ninja", data: result });
                 }
             });
         }
@@ -82,9 +82,9 @@ class BlogController implements IBaseController<BlogBusiness> {
 
             business.update(_id, user, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         } catch (e) {

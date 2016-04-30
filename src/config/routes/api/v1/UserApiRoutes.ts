@@ -1,9 +1,9 @@
 import express = require("express");
-import UserController = require("./../../app/controllers/UserController");
+import UserController = require("./../../../../app/controllers/UserController");
 
 let router = express.Router();
 
-class UserRoutes {
+class UserApiRoutes {
     private _userController: UserController;
 
     constructor() {
@@ -13,16 +13,16 @@ class UserRoutes {
     get routes() {
         let controller = this._userController;
 
-        router.delete("/:_id", controller.delete);
         router.get("/", controller.retrieve);
-        router.get("/:_id", controller.findById);
         router.post("/", controller.create);
+        router.get("/:_id", controller.findById);
         router.put("/:_id", controller.update);
+        router.delete("/:_id", controller.delete);
 
         return router;
     }
 }
 
-Object.seal(UserRoutes);
+Object.seal(UserApiRoutes);
 
-export = UserRoutes;
+export = UserApiRoutes;

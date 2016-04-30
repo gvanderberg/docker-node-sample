@@ -11,9 +11,9 @@ class UserController implements IBaseController<UserBusiness> {
 
             business.create(user, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -28,9 +28,9 @@ class UserController implements IBaseController<UserBusiness> {
 
             business.delete(id, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         } catch (e) {
@@ -45,9 +45,9 @@ class UserController implements IBaseController<UserBusiness> {
 
             business.findById(id, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    res.send(result);
+                    res.json(result);
                     //res.send({ "success": "success" });
                 }
             });
@@ -62,10 +62,10 @@ class UserController implements IBaseController<UserBusiness> {
 
             business.retrieve((error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    //res.send(result);
-                    res.render("users/list", { title: "Users", data: result });
+                    res.json(result);
+                    //res.render("users/list", { title: "Users", data: result });
                 }
             });
         }
@@ -82,9 +82,9 @@ class UserController implements IBaseController<UserBusiness> {
 
             business.update(_id, user, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 } else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         } catch (e) {

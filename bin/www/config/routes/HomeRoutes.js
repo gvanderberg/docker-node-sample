@@ -15,6 +15,18 @@ class HomeRoutes {
             console.log("Got a GET request for the Contact page.");
             res.render("contact", { title: "Contact" });
         });
+        router.get("/signin", (req, res, next) => {
+            console.log("Got a GET request for the SignIn page.");
+            res.render("users/signin", { title: "Sign In" });
+        });
+        router.get("/signup", (req, res, next) => {
+            console.log("Got a GET request for the SignUp page.");
+            res.render("users/signup", { title: "Sign Up" });
+        });
+        router.get("/signout", (req, res, next) => {
+            console.log("Got a GET request for the Sign Out page.");
+            res.redirect("/");
+        });
         return router;
     }
 }

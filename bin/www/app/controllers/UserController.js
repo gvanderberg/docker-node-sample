@@ -7,10 +7,10 @@ class UserController {
             var business = new UserBusiness();
             business.create(user, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 }
                 else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         }
@@ -25,10 +25,10 @@ class UserController {
             var business = new UserBusiness();
             business.delete(id, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 }
                 else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         }
@@ -43,10 +43,10 @@ class UserController {
             var business = new UserBusiness();
             business.findById(id, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 }
                 else {
-                    res.send(result);
+                    res.json(result);
                 }
             });
         }
@@ -60,11 +60,10 @@ class UserController {
             var business = new UserBusiness();
             business.retrieve((error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 }
                 else {
-                    //res.send(result);
-                    res.render("users/list", { title: "Users", data: result });
+                    res.json(result);
                 }
             });
         }
@@ -80,10 +79,10 @@ class UserController {
             var business = new UserBusiness();
             business.update(_id, user, (error, result) => {
                 if (error) {
-                    res.send({ "error": error });
+                    res.send(error);
                 }
                 else {
-                    res.send({ "success": "success" });
+                    res.json({ "success": "success" });
                 }
             });
         }

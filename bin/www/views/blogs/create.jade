@@ -8,8 +8,8 @@ block content
     div.row
       h2.page-header Post an Article
       div= error
-      div.col-md-12
-        form(action="/articles/post", method="POST", role="form")
+      div.col-md-8
+        form(action="/api/v1/blogs", method="POST", role="form")
           div.form-group
             label(for="title") Title
             input#title.form-control(name="title", type="text", placeholder="JavaScript is good")
