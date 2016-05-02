@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "sourceMap": false,
+        "sourceMap": true,
         "target": "es6"
     },
     "exclude": [
+        "bin",
+        "bower_components",
         "node_modules",
         "typings"
     ]
