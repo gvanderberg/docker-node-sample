@@ -1,16 +1,22 @@
-extends ../layouts/desktop
-
-block alert
-
-block content
-    .container
-        div= error
-        form.form-signin(action="/signin", method="POST", role="form")
-            h2.form-signin-heading Please sign in
-            input#email.form-control.input-lg(name="email", placeholder="Email address", type="email")            
-            input#password.form-control.input-lg(name="password", placeholder="********", type="password")
-            .checkbox
-                label
-                    input(type="checkbox", value="remember-me")
-                    | Remember me
-            input.btn.btn-primary.btn-lg.btn-block(type="submit", value="Sign in")
+doctype html
+html
+    head
+        title=title
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", type="text/css", href="/css/bootstrap.css")
+        link(rel="stylesheet", type="text/css", href="/css/font-awesome.css")
+        link(rel="stylesheet", type="text/css", href='https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CPT+Serif:400,400italic')
+        link(rel="stylesheet", type="text/css", href="/css/style.css")
+    body
+        block content
+            .container
+                div= error
+                form.form-signin(action="/signin", method="POST", role="form")
+                    h2.form-signin-heading Please sign in
+                    input#email.form-control.input-lg(name="email", placeholder="Email address", type="email")            
+                    input#password.form-control.input-lg(name="password", placeholder="********", type="password")
+                    .checkbox
+                        label
+                            input(type="checkbox", value="remember-me")
+                            | Remember me
+                    input.btn.btn-primary.btn-lg.btn-block(type="submit", value="Sign in")

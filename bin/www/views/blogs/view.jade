@@ -2,12 +2,71 @@ extends ../layouts/desktop
 
 block page 
     - var menu = "blogs"
-block alert
-
 block content
     .container
         .row
-            .page-header
-                h2 #{title} <small>#{blog.createdAt.toDateString()}</small>
-            .col-sm-8.col-xs-12
-              p #{blog.body}
+            .col-sm-8.col-xs-12.blog-main
+                article.blog-post
+                    header
+                        h1= title
+                        .lead
+                            .meta.clearfix
+                                .author
+                                    i.fa.fa-user &nbsp;
+                                    span.data Gareth van der Berg
+                                .date
+                                    i.fa.fa-calendar &nbsp;
+                                    span.data= blog.createdAt.toDateString()
+                                .comments
+                                    i.fa.fa-comments &nbsp;
+                                    span.data ## comments
+                    .body= blog.body
+                article.social-icons.clearfix
+                    a.social-icon(href="#twitter")
+                        .inner-circle
+                        i.fa.fa-twitter
+                    a.social-icon(href="#google")
+                        .inner-circle
+                        i.fa.fa-google-plus
+                    a.social-icon(href="#facebook")
+                        .inner-circle
+                        i.fa.fa-facebook
+                article#comments.comments
+                    hr
+                    h2
+                        i.fa.fa-comments &nbsp;## comments
+                    article.comment
+                        header.clearfix
+                            .meta
+                                h3 Willy Wonka
+                        .body
+                            p Some stuff
+                    article.comment
+                        header.clearfix
+                            .meta
+                                h3 Willy Wonka
+                        .body
+                            p Some stuff
+                    article.comment
+                        header.clearfix
+                            .meta
+                                h3 Willy Wonka
+                        .body
+                            p Some stuff
+                article#create-comment.create-comment
+                    hr
+                    h2
+                        i.fa.fa-heart &nbsp;Add comment
+                    .form(action="/api/v1/comment", method="POST", role="form")
+                        .row
+                            .col-sm-6
+                                input#name.form-control.input-lg(name="name", placeholder="name", type="text")
+                            .col-sm-6
+                                input#email.form-control.input-lg(name="email", placeholder="email", type="email")
+                        .row
+                            .col-sm-12
+                                textarea#message.form-control.input-lg(name="message", placeholder="your thoughts", rows="10")
+                        p.pull-right 
+                            input.btn.btn-default(type="button", value="Cancel")
+                            input.btn.btn-primary(type="submit", value="Save")                                    
+            .col-sm-4.col-xs-12.blog-aside

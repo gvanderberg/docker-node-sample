@@ -6,6 +6,27 @@ block alert
 
 block content
     .container
+        div= error
         .row
             .page-header
                 h2= title
+            .col-md-8
+                form(action="/api/v1/users", method="POST", role="form")
+                    .form-group
+                        label(for="firstName") First Name
+                        input#firstName.form-control(name="firstName", type="text", placeholder="first name")
+                    .form-group
+                        label(for="lastName") Last Name
+                        input#lastName.form-control(name="lastName", type="text", placeholder="last name")
+                    .form-group
+                        label(for="email") Email
+                        input#email.form-control(name="email", type="email", placeholder="email address")
+                    .form-group
+                        label(for="password") Password
+                        input#password.form-control(name="password", type="password", placeholder="password")
+                    .form-group
+                        label(for="confirmPassword") Confirm Password
+                        input#confirmPassword.form-control(name="confirmPassword", type="password", placeholder="confirm password")
+                    p.pull-right 
+                        input.btn.btn-default(type="button", value="Cancel")
+                        input.btn.btn-primary(type="submit", value="Save")

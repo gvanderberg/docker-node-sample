@@ -20,6 +20,15 @@
 			"problemMatcher": [
 				"$tsc"
 			]
+		},
+		{
+			"taskName": "bower",
+			"args": [],
+			"isBuildCommand": false,
+			"showOutput": "silent",
+			"problemMatcher": [
+				"$tsc"
+			]
 		}
 	]
 }

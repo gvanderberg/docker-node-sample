@@ -29,3 +29,4 @@ class UserBusiness {
 }
 Object.seal(UserBusiness);
 module.exports = UserBusiness;
+//# sourceMappingURL=UserBusiness.js.map

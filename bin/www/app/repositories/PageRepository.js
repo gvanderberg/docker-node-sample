@@ -8,3 +8,4 @@ class PageRepository extends BaseRepository {
 }
 Object.seal(PageRepository);
 module.exports = PageRepository;
+//# sourceMappingURL=PageRepository.js.map

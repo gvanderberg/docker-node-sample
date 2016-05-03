@@ -23,3 +23,4 @@ class UserRoutes {
 }
 Object.seal(UserRoutes);
 module.exports = UserRoutes;
+//# sourceMappingURL=UserRoutes.js.map

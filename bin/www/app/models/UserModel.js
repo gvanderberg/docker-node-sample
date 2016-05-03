@@ -27,3 +27,4 @@ class UserModel {
 }
 Object.seal(UserModel);
 module.exports = UserModel;
+//# sourceMappingURL=UserModel.js.map

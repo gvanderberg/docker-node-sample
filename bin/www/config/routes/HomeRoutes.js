@@ -32,3 +32,4 @@ class HomeRoutes {
 }
 Object.seal(HomeRoutes);
 module.exports = HomeRoutes;
+//# sourceMappingURL=HomeRoutes.js.map

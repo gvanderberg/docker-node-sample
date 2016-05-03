@@ -30,3 +30,4 @@ class BlogBusiness {
 }
 Object.seal(BlogBusiness);
 module.exports = BlogBusiness;
+//# sourceMappingURL=BlogBusiness.js.map

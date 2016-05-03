@@ -30,3 +30,4 @@ class BlogModel {
 }
 Object.seal(BlogModel);
 module.exports = BlogModel;
+//# sourceMappingURL=BlogModel.js.map

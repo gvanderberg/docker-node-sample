@@ -19,3 +19,4 @@ class BaseMiddlewares {
 }
 Object.seal(BaseMiddlewares);
 module.exports = BaseMiddlewares;
+//# sourceMappingURL=BaseMiddlewares.js.map

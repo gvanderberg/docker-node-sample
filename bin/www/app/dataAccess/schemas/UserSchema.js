@@ -18,3 +18,4 @@ class UserSchema {
 }
 let schema = mongooseConnection.model("Users", UserSchema.schema);
 module.exports = schema;
+//# sourceMappingURL=UserSchema.js.map

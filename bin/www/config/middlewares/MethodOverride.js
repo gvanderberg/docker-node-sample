@@ -13,3 +13,4 @@ class MethodOverride {
 }
 Object.seal(MethodOverride);
 module.exports = MethodOverride;
+//# sourceMappingURL=MethodOverride.js.map

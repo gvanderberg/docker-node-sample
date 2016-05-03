@@ -19,3 +19,4 @@ class BlogSchema {
 }
 let schema = mongooseConnection.model("Blogs", BlogSchema.schema);
 module.exports = schema;
+//# sourceMappingURL=BlogSchema.js.map

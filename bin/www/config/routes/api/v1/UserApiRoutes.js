@@ -18,3 +18,4 @@ class UserApiRoutes {
 }
 Object.seal(UserApiRoutes);
 module.exports = UserApiRoutes;
+//# sourceMappingURL=UserApiRoutes.js.map

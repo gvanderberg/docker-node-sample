@@ -8,3 +8,4 @@ class UserRepository extends BaseRepository {
 }
 Object.seal(UserRepository);
 module.exports = UserRepository;
+//# sourceMappingURL=UserRepository.js.map

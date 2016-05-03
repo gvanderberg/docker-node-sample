@@ -7,3 +7,4 @@ class HomeController {
     update(req, res) { }
 }
 module.exports = HomeController;
+//# sourceMappingURL=HomeController.js.map

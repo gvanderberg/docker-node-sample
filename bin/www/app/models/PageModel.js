@@ -15,3 +15,4 @@ class PageModel {
 }
 Object.seal(PageModel);
 module.exports = PageModel;
+//# sourceMappingURL=PageModel.js.map

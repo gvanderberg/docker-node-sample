@@ -14,3 +14,4 @@ class PageSchema {
 }
 let schema = mongooseConnection.model("Pages", PageSchema.schema);
 module.exports = schema;
+//# sourceMappingURL=PageSchema.js.map

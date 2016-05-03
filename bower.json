@@ -2,7 +2,12 @@
     "name": "vscode-docker-node-sample",
     "version": "1.0.0",
     "description": "",
+    "author": {
+        "name": "Gareth van der Berg",
+        "email": "gareth.shaun@gmail.com"
+    },
     "dependencies": {
-        "bootstrap": "3.3.6"
+        "bootstrap": "3.3.6",
+        "font-awesome": "4.6.1"
     }
 }

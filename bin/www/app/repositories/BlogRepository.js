@@ -8,3 +8,4 @@ class BlogRepository extends BaseRepository {
 }
 Object.seal(BlogRepository);
 module.exports = BlogRepository;
+//# sourceMappingURL=BlogRepository.js.map

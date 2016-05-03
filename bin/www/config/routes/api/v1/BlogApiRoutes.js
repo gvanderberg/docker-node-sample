@@ -18,3 +18,4 @@ class BlogApiRoutes {
 }
 Object.seal(BlogApiRoutes);
 module.exports = BlogApiRoutes;
+//# sourceMappingURL=BlogApiRoutes.js.map

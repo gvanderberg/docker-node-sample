@@ -27,3 +27,4 @@ const twitter = {
     callbackUrl: "http://localhost:8080/auth/twitter/callback"
 };
 module.exports = env;
+//# sourceMappingURL=production.js.map

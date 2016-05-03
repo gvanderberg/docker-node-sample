@@ -30,3 +30,4 @@ class BlogRoutes {
 }
 Object.seal(BlogRoutes);
 module.exports = BlogRoutes;
+//# sourceMappingURL=BlogRoutes.js.map

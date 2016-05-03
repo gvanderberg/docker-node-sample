@@ -93,3 +93,4 @@ class UserController {
     }
 }
 module.exports = UserController;
+//# sourceMappingURL=UserController.js.map

@@ -24,3 +24,4 @@ class BaseRepository {
     }
 }
 module.exports = BaseRepository;
+//# sourceMappingURL=BaseRepository.js.map

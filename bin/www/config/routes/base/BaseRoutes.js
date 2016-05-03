@@ -21,3 +21,4 @@ class BaseRoutes {
     }
 }
 module.exports = BaseRoutes;
+//# sourceMappingURL=BaseRoutes.js.map
